@@ -1,12 +1,10 @@
-function mobileClose() {
-    const el = document.getElementById("closeButton");
-    if (el.style.display === "none") {
-        el.style.display = "block";
-    } else {
-        el.style.display = "none";
-    }
-}
+// Smooth sroll when clicking any anchor link
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-addEventListener("toggle", (mobileClose) => { })
-
-ontoggle = (mobileClose) => { }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
